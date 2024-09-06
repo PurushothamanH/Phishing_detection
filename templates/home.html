@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Detection</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="login">
+    <h1>Phishing Detection</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form class="form" action="{{ url_for('predict_datapoint') }}" method="post">
+
+      <input type="number" class="form-input" name="NumDots" placeholder="NumDots" required="required" /><br>
+      <input type="number" class="form-input" name="PathLevel" placeholder="PathLevel" required="required" /><br>
+      <input type="number" class="form-input" name="UrlLength" placeholder="UrlLength" required="required" /><br>
+      <input type="number" class="form-input" name="NumDash" placeholder="NumDash" required="required" /><br>
+      <input type="number" class="form-input" name="NumNumericChars" placeholder="NumNumericChars" required="required" /><br>
+      <input type="number" class="form-input" name="RandomString" placeholder="RandomString" required="required" /><br>
+      <input type="number" class="form-input" name="DomainInPaths" placeholder="DomainInPaths" required="required" /><br>
+      <input type="number" class="form-input" name="PathLength" placeholder="PathLength" required="required" /><br>
+      <input type="number" class="form-input" name="PctExtHyperlinks" placeholder="PctExtHyperlinks" required="required" /><br>
+      <input type="number" class="form-input" name="InsecureForms" placeholder="InsecureForms" required="required" /><br>
+      <input type="number" class="form-input" name="RelativeFormAction" placeholder="RelativeFormAction" required="required" /><br>
+      <input type="number" class="form-input" name="PctNullSelfRedirectHyperlinks" placeholder="PctNullSelfRedirectHyperlinks" required="required" /><br>
+      <input type="number" class="form-input" name="FrequentDomainNameMismatch" placeholder="FrequentDomainNameMismatch" required="required" /><br>
+      <input type="number" class="form-input" name="SubmitInfoToEmail" placeholder="SubmitInfoToEmail" required="required" /><br>
+      <input type="number" class="form-input" name="IframeOrFrame" placeholder="IframeOrFrame" required="required" /><br>
+      <input type="number" class="form-input" name="UrlLengthRT" placeholder="UrlLengthRT" required="required" /><br>
+      <input type="number" class="form-input" name="PctExtResourceUrlsRT" placeholder="PctExtResourceUrlsRT" required="required" /><br>
+      <input type="number" class="form-input" name="ExtMetaScriptLinkRT" placeholder="ExtMetaScriptLinkRT" required="required" /><br>
+      <input type="number" class="form-input" name="PctExtNullSelfRedirectHyperlinksRT" placeholder="PctExtNullSelfRedirectHyperlinksRT" required="required" /><br>
+   
+
+      <button type="submit" class="form-button btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br>
+    <br>
+
+  </div>
+  <h2>
+    The Prediction output is {{ results }}
+  </h2>
+</body>
+
+</html>
